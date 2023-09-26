@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 1598104934}
   - component: {fileID: 1598104933}
   - component: {fileID: 1598104932}
+  - component: {fileID: 1598104936}
   m_Layer: 0
   m_Name: BlockIce
   m_TagString: Untagged
@@ -682,6 +683,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598104936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598104931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c996a2822d08b449a56a558c6b66aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healValue: 0
+  _speedUp: 0
 --- !u!1 &1775353562
 GameObject:
   m_ObjectHideFlags: 0
