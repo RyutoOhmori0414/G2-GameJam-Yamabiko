@@ -22,5 +22,10 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.TryGetComponent(out HoldIceController iceCon))
+        {
+            collision.transform.root.GetComponent<PlayerController>().HitEnemy(iceCon.Index);
+        }
     }
 }
