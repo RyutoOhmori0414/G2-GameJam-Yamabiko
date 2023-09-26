@@ -38,8 +38,14 @@ public class PlayerController : MonoBehaviour
 
     public void HitIceCream()
     {
+        if (_currentIceIndex > _iceHoldPositions.Length)
+        {
+            Debug.LogError($"_currentIceIndex = {_currentIceIndex}");
+        }
+        
         var temp = Instantiate(_icePrefab);
         temp.transform.position = _iceHoldPositions[_currentIceIndex].position;
+        temp.transform.SetParent(_iceHoldPositions[_currentIceIndex]);
         _iceControllers.Add(temp);
         temp.Index = _currentIceIndex;
         _currentIceIndex++;
