@@ -71,3 +71,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .vsconfig
+.idea/.idea.G2-GameJam_Yamabiko/.idea/.gitignore
+.idea/.idea.G2-GameJam_Yamabiko/.idea/indexLayout.xml
+.idea/.idea.G2-GameJam_Yamabiko/.idea/vcs.xml
