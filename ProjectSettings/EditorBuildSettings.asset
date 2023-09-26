@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Ichihashi/Scenes/Title.unity
+    guid: df24b7ab4e184504a8459088b7989e40
+  - enabled: 1
+    path: Assets/Ichihashi/Scenes/DebugMain.unity
+    guid: efc7a2cccbd3c7342abe36e3e9a5e6a6
+  - enabled: 1
+    path: Assets/Ichihashi/Scenes/Clear.unity
+    guid: 55ce1dc08dd28a84596590ee1c118ae4
+  - enabled: 1
+    path: Assets/Ichihashi/Scenes/Fail.unity
+    guid: 5a1382de4c57ab6428c1563c6d472dc2
   m_configObjects: {}
