@@ -10,6 +10,10 @@ public class PlayerMoveController : MonoBehaviour
     private float _timer = 0.0F;
     private bool _isRunning = false;
 
+    private Rigidbody _rb = default;
+
+    
+    
     private void FixedUpdate()
     {
         
