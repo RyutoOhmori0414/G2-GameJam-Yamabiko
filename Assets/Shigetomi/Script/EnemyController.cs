@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("D");
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "BackWall")
         {
             Destroy(this.gameObject);
         }

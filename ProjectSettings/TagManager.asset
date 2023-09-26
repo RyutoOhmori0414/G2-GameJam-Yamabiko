@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Undefined
+  - SpwanPoint
+  - Wall
+  - BackWall
   layers:
   - Default
   - TransparentFX
