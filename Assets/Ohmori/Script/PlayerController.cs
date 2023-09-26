@@ -7,6 +7,7 @@ using UniRx;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField, Tooltip("MaxHp")] private float _maxHP = 100.0F;
+    public float MaxHP => _maxHP;
     
     [SerializeField, Tooltip("何秒でHPが0になるか(何もしなかった際)")]
     private float _slipDamage = 30.0F;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     public void HitEnemy(int removeIndex)
     {
+        _currentIceIndex--;
         var temp = _iceControllers[removeIndex];
         _iceControllers.RemoveAt(removeIndex);
 
@@ -60,8 +62,6 @@ public class PlayerController : MonoBehaviour
         {
             _iceControllers[i].IndexDecriment(_iceHoldPositions[i].position);
         }
-
-        _currentIceIndex--;
     }
 
     private void Awake()

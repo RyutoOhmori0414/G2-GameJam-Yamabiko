@@ -33,6 +33,6 @@ public class HoldIceController : MonoBehaviour
         _index--;
         _isMoveing = true;
         _lastTarget = moveTarget;
-        _callback = transform.DOMove(moveTarget, _duration).OnComplete(() => _isMoveing = false);
+        _callback = transform.DOLocalMove(moveTarget - transform.position, _duration).OnComplete(() => _isMoveing = false);
     }
 }
