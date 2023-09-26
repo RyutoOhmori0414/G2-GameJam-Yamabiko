@@ -12,7 +12,6 @@ public class IceCreamController : MonoBehaviour
             _playerController.HitIceCream();
             this.transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + 3, _player.transform.position.z);
             this.transform.SetParent(_player.transform);
-            Destroy(this.gameObject);
         }
     }
     public void IceTest()
