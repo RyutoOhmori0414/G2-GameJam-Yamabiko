@@ -13,7 +13,7 @@ public class HoldIceController : MonoBehaviour
 
     private bool _isMoveing = false;
 
-    private Vector3 _lastTarget = Vector3.zero;
+    private Transform _lastTarget = default;
     private TweenerCore<Vector3, Vector3, VectorOptions> _callback = default;
 
     public int Index
@@ -22,17 +22,25 @@ public class HoldIceController : MonoBehaviour
         set => _index = value;
     }
 
-    public void IndexDecriment(Vector3 moveTarget)
+    public void IndexDecriment(Transform targetTransform)
     {
         if (_isMoveing)
         {
             _callback.Kill();
-            transform.position = _lastTarget;
+            transform.position = _lastTarget.position;
+            this.transform.SetParent(targetTransform);
             _isMoveing = false;
         }
         _index--;
         _isMoveing = true;
-        _lastTarget = moveTarget;
-        _callback = transform.DOLocalMove(moveTarget - transform.position, _duration).OnComplete(() => _isMoveing = false);
+        _lastTarget = targetTransform;
+        
+        Debug.Log($"{(targetTransform.position - transform.position).ToString()}");
+        
+        _callback = transform.DOLocalMove(targetTransform.position - transform.position, _duration).OnComplete(() =>
+        {
+            _isMoveing = false;
+            this.transform.SetParent(targetTransform);
+        });
     }
 }

@@ -60,8 +60,9 @@ public class PlayerController : MonoBehaviour
 
         for (int i = removeIndex; i < _iceControllers.Count; i++)
         {
-            _iceControllers[i].IndexDecriment(_iceHoldPositions[i].position);
+            _iceControllers[i].IndexDecriment(_iceHoldPositions[i]);
         }
+        _currentIceIndex--;
     }
 
     private void Awake()
