@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class BlockIceController : MonoBehaviour
 {
-    /// <summary>•Xæ“¾‚Ì‰ñ•œ—Ê</summary>
-    [SerializeField, Tooltip("•Xæ“¾‚Ì‰ñ•œ—Ê")] float _healValue;
-    /// <summary>•Xæ“¾‚Ì‘¬“xã¸</summary>
-    [SerializeField, Tooltip("•Xæ“¾‚Ì‘¬“xã¸")] float _speedUp;
+    /// <summary>ï¿½Xï¿½æ“¾ï¿½ï¿½ï¿½Ì‰ñ•œ—ï¿½</summary>
+    [SerializeField, Tooltip("ï¿½Xï¿½æ“¾ï¿½ï¿½ï¿½Ì‰ñ•œ—ï¿½")] float _healValue;
+    /// <summary>ï¿½Xï¿½æ“¾ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½ã¸</summary>
+    [SerializeField, Tooltip("ï¿½Xï¿½æ“¾ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½ã¸")] float _speedUp;
+
+    [SerializeField] private ParticleSystem _particleSystem = default;
+    
     PlayerController _playerController;
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<PlayerController>(out _playerController))
         {
             _playerController.HitBlockIce(_healValue, _speedUp);
+            var temp = Instantiate(_particleSystem);
+            temp.transform.position = other.transform.position;
             Destroy(this.gameObject);
         }
     }

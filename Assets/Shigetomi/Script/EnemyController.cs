@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
             {
                 var temp = Instantiate(_getEffect);
                 temp.transform.position = hit.collider.transform.position;
+
                 hit.collider.transform.root.GetComponent<PlayerController>().HitEnemy(iceController.Index);
                 hit.collider.transform.SetParent(this.transform);
                 _haveIce = true;

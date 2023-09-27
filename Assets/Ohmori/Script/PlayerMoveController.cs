@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerMoveController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField, Tooltip("最高速に達する時間")] private float _maxSpeedTime = 1.0F;
     [SerializeField, Tooltip("JumpPower")] private float _jumpPower = 5.0F;
     [SerializeField, Tooltip("着地エフェクト")] private ParticleSystem _onGroundEffect = default;
+    [SerializeField] private DecalProjector _decal = default;
     private PlayerMoveState _state = PlayerMoveState.Stop;
 
     private Rigidbody _rb = default;
@@ -69,6 +71,8 @@ public class PlayerMoveController : MonoBehaviour
             {
                 var temp = Instantiate(_onGroundEffect);
                 temp.transform.position = other.contacts[0].point;
+                var temp2 = Instantiate(_decal);
+                temp2.transform.position = other.contacts[0].point;
             }
             
             _jumpCount = 2;

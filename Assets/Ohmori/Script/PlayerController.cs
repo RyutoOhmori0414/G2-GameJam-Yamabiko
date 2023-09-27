@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,6 +55,20 @@ public class PlayerController : MonoBehaviour
         _currentIceIndex++;
     }
 
+    private void Death()
+    {
+        //　失敗シーンに飛ぶ
+        SceneManager.LoadScene(4);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            Death();
+        }
+    }
+
     public void HitEnemy(int removeIndex)
     {
         _currentIceIndex--;
@@ -71,6 +86,13 @@ public class PlayerController : MonoBehaviour
     {
         _currentHpRP.Value = _maxHP;
         _moveController = GetComponent<PlayerMoveController>();
+        _currentHpRP.Subscribe(x =>
+        {
+            if (x <= 0)
+            {
+                Death();
+            }
+        });
     }
 
     private void Update()
