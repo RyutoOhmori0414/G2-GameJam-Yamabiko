@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class IceCreamController : MonoBehaviour
 {
-    /// <summary>ƒvƒŒƒCƒ„[‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒgŠi”[—p</summary>
-    [SerializeField, Tooltip("ƒvƒŒƒCƒ„[‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğ“ü‚ê‚é")] GameObject _player;
+    /// <summary>ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌƒQï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½iï¿½[ï¿½p</summary>
+    [SerializeField, Tooltip("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌƒQï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")] GameObject _player;
     PlayerController _playerController;
+    [SerializeField] private ParticleSystem _particleSystem = default;
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<PlayerController>(out _playerController))
         {
             _playerController.HitIceCream();
+            var temp = Instantiate(_particleSystem);
+            temp.transform.position = other.transform.position;
             Destroy(this.gameObject);
             //this.transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + 3, _player.transform.position.z);
             //this.transform.SetParent(_player.transform);

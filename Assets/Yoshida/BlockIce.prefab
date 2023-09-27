@@ -120,3 +120,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healValue: 100
   _speedUp: 1
+  _particleSystem: {fileID: 8401323286642188210, guid: b8dc34a074bc17a4ba2eef3df3b18fbc,
+    type: 3}

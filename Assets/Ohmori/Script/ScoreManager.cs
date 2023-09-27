@@ -33,10 +33,13 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>スコアを計算する(ゲーム終了時に呼び出し)</summary>
-    public void CalcScore()
+    public void CalcScore(bool isClear)
     {
         _score += _playerController.CurrentHpRP.Value * _hpScore;
         _score += _playerController.CurrentIceCount * _iceCreamScore;
-        _score += (1 - _timeController.CurrentTime / _goalTimeStanderd) * _timeScore;
+        if (isClear)
+        {
+            _score += (1 - _timeController.CurrentTime / _goalTimeStanderd) * _timeScore;
+        }
     }
 }
