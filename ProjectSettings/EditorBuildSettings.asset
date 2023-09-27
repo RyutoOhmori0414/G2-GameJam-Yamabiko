@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Ichihashi/Scenes/Command.unity
     guid: 4bd7f8001dfa33941a65f352cfe4f4a8
   - enabled: 1
-    path: Assets/Ichihashi/Scenes/DebugMain.unity
-    guid: efc7a2cccbd3c7342abe36e3e9a5e6a6
+    path: Assets/Shigetomi/Scene/Shigetomi.unity
+    guid: ed1e223f15d73c342bf982650b5fdd62
   - enabled: 1
     path: Assets/Ichihashi/Scenes/Clear.unity
     guid: 31c50470b90b5094ebb8c77b2ba75626
   - enabled: 1
     path: Assets/Ichihashi/Scenes/Fail.unity
     guid: 5a1382de4c57ab6428c1563c6d472dc2
+  - enabled: 0
+    path: Assets/Ichihashi/Scenes/DebugMain.unity
+    guid: efc7a2cccbd3c7342abe36e3e9a5e6a6
   m_configObjects: {}

@@ -14,6 +14,6 @@ public class StageMater : MonoBehaviour
         float _start = _startPoint.transform.position.x;
         float _end = _endPoint.transform.position.x;
         _poineDifference = _end - _start;
-        _TimeController.StartTimer();
+        _TimeController.StartTimer(); 
     }
 }
