@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
         
         // スピードの更新
         _moveController.AddSpeed(addSpeed);
+
+        AudioManager.instance.HitBlockIceSE();
     }
 
     public void HitIceCream()
@@ -46,13 +48,16 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError($"_currentIceIndex = {_currentIceIndex}");
         }
-        
+
         var temp = Instantiate(_icePrefab);
         temp.transform.position = _iceHoldPositions[_currentIceIndex].position;
         temp.transform.SetParent(_iceHoldPositions[_currentIceIndex]);
         _iceControllers.Add(temp);
         temp.Index = _currentIceIndex;
         _currentIceIndex++;
+
+  
+        AudioManager.instance.HitIceCreamSE();
     }
 
     private void Death()
@@ -80,6 +85,8 @@ public class PlayerController : MonoBehaviour
             _iceControllers[i].IndexDecriment(_iceHoldPositions[i]);
         }
         _currentIceIndex--;
+
+        AudioManager.instance.DropIceCreanSE();
     }
 
     private void Awake()

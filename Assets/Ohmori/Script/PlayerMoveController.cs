@@ -31,6 +31,7 @@ public class PlayerMoveController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && _jumpCount > 0)
         {
             _rb.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
+            AudioManager.instance.JumpSE();
             _jumpCount--;
         }
     }
