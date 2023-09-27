@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     private PlayerMoveController _moveController = default;
     private List<HoldIceController> _iceControllers = new List<HoldIceController>();
     private int _currentIceIndex = 0;
+
+    public int CurrentIceCount => _iceControllers.Count;
     
     public void HitBlockIce(float healValue, float addSpeed)
     {

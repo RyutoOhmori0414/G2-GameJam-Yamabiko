@@ -9,11 +9,12 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField, Tooltip("現在の最高速")] private float _currentMaxSpeed = 10F;
     [SerializeField, Tooltip("最高速に達する時間")] private float _maxSpeedTime = 1.0F;
     [SerializeField, Tooltip("JumpPower")] private float _jumpPower = 5.0F;
+    [SerializeField, Tooltip("着地エフェクト")] private ParticleSystem _onGroundEffect = default;
     private PlayerMoveState _state = PlayerMoveState.Stop;
 
     private Rigidbody _rb = default;
 
-    private int _jumpCount = 0;
+    private int _jumpCount = 2;
     
     private void FixedUpdate()
     {
@@ -64,6 +65,12 @@ public class PlayerMoveController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            if (_jumpCount < 2)
+            {
+                var temp = Instantiate(_onGroundEffect);
+                temp.transform.position = other.contacts[0].point;
+            }
+            
             _jumpCount = 2;
         }
     }
