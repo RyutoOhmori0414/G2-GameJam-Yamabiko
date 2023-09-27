@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
 
         var temp = Instantiate(_icePrefab);
+        temp.SetPlayerController(this);
         temp.transform.position = _iceHoldPositions[_currentIceIndex].position;
         temp.transform.SetParent(_iceHoldPositions[_currentIceIndex]);
         _iceControllers.Add(temp);

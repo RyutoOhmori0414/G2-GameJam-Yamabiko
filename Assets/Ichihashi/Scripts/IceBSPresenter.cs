@@ -6,9 +6,13 @@ public class IceBSPresenter : MonoBehaviour
     [SerializeField] PlayerController player;
     [SerializeField] IceBSView view;
 
-    void Awake()
+    public PlayerController PlayerController
     {
-        player.CurrentHpRP
-            .Subscribe(hp => view.SetBSWeight((1 - hp / player.MaxHP) * 100));
+        set
+        {
+            player = value;
+            player.CurrentHpRP
+                .Subscribe(hp => view.SetBSWeight((1 - hp / player.MaxHP) * 100));
+        }
     }
 }
