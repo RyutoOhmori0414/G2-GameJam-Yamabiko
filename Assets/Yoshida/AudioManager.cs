@@ -8,6 +8,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip _jumpSE;
     [SerializeField] AudioClip _buttonClickSE;
     AudioSource _audioSource;
+
+    public static AudioManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+    }
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
