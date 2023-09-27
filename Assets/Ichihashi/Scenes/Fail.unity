@@ -493,6 +493,8 @@ GameObject:
   - component: {fileID: 1202652003}
   - component: {fileID: 1202652005}
   - component: {fileID: 1202652004}
+  - component: {fileID: 1202652007}
+  - component: {fileID: 1202652006}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -532,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.12156863, g: 0.94509804, b: 0.78431374, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -561,6 +563,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202652002}
   m_CullTransparentMesh: 1
+--- !u!114 &1202652006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202652002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ce1dc22c6d5a949b7b5bb935f7af7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1202652004}
+--- !u!114 &1202652007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202652002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d10daaf9989d4548b140a271b3ec9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreView: {fileID: 1202652006}
 --- !u!1 &1262340342
 GameObject:
   m_ObjectHideFlags: 0
